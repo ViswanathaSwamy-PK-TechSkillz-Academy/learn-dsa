@@ -39,7 +39,7 @@ def access_element(arr, index):
     return arr[index]
 ```
 
-```JavaScript
+```javascript
 function accessElement(arr, index) {
     return arr[index];
 }
@@ -51,7 +51,7 @@ function accessElement(arr, index) {
 divides the problem into smaller parts in each step (divide and conquer). It's efficient for large datasets.
 > 1. **Example:** Binary search.
 
-**Pseudocode:**
+**Sample codes:**
 
 ```python
 def binary_search(arr, target):
@@ -67,19 +67,49 @@ def binary_search(arr, target):
     return -1
 ```
 
+```javascript
+function binarySearch(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        if (arr[mid] === target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1;
+}
+```
+
 ### 2.3. O(n): Linear Time
 
-- **Description:** Linear time complexity means the running time grows linearly with the input size. It's proportional to the data set size.
-- **Example:** Looping through an array.
-- **Pseudocode:**
+> 1. **Description:** Linear time complexity means the running time grows linearly with the input size. It's proportional to the data set size.
+> 1. **Example:** Looping through an array.
 
-     ```python
-     def linear_search(arr, target):
-         for i in range(len(arr)):
-             if arr[i] == target:
-                 return i
-         return -1
-     ```
+**Sample codes:**
+
+```python
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+```
+
+```javascript
+function linearSearch(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+            return i;
+        }
+    }
+    return -1;
+}
+```
 
 ### 2.4. O(n log n): Linearithmic Time
 
