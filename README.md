@@ -150,29 +150,52 @@ def merge(left, right):
     return result
 ```
 
+```javascript
+// JavaScript
+function mergeSort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+    const mid = Math.floor(arr.length / 2);
+    const leftHalf = mergeSort(arr.slice(0, mid));
+    const rightHalf = mergeSort(arr.slice(mid));
+
+    return merge(leftHalf, rightHalf);
+}
+
+function merge(left, right) {
+    const result = [];
+    let i = 0;
+    let j = 0;
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            result.push(left[i]);
+            i++;
+        } else {
+            result.push(right[j]);
+            j++;
+        }
+    }
+    
+    return result.concat(left.slice(i), right.slice(j));
+}
+```
+
 ### 2.5. O(n^2): Polynomial Time
 
-- **Description:** Polynomial time complexity involves nested loops for each power of n. It's less efficient for large datasets.
-- **Example:** Bubble sort (O(n^2)).
-- **Pseudocode:**
+> 1. **Description:** Polynomial time complexity involves nested loops for each power of n. It's less efficient for large datasets.
+> 1. **Example:** Bubble sort (O(n^2)).
 
-     ```python
-     def bubble_sort(arr):
-         n = len(arr)
-         for i in range(n):
-             for j in range(n - i - 1):
-                 if arr[j] > arr[j + 1]:
-                     arr[j], arr[j + 1] = arr[j + 1], arr[j]
-     ```
+**Sample codes:**
 
-Remember that understanding these complexities helps in choosing the right algorithm for specific tasks. Feel free to ask if you need further clarification or additional examples! 🌟📊
-
-Source: Conversation with Bing, 5/11/2024
-(1) github.com. <https://github.com/jaydeepdeka/DataStructures-Algo/tree/c068472913656af615dbfd51823d2d0bce9b9ed5/sorting.py>.
-(2) github.com. <https://github.com/michaelmcguiness/stanford-algorithms-specialization/tree/ff3cf563f46b79ac96f2ee97410ae40aeaf33eb4/divide-and-conquer%2Fmerge_sort.py>.
-(3) github.com. <https://github.com/gcy1998/sample-code/tree/29539d4f45013bcaf84d1d9962fc506b3089d073/Python%2FAlgorithms%2Fsort_compare.py>.
-(4) github.com. <https://github.com/xiongdawei/Sorting-Algorithm/tree/95a92f85ca27acea38e869407bed153df564fd3c/work056.py>.
-(5) github.com. <https://github.com/juso40/sorting-algorithms/tree/0f7db0940c2fc013a107d158ba0ef285f1c4125d/Python%2FBubblesort.py>.
+```python
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+```
 
 ---
 
