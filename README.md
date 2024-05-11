@@ -25,100 +25,192 @@ I am learning Data Structures and Algorithms from different Websites, Books, and
 > 1. **Example:** If we say an algorithm has a time complexity of O(n), it means that the worst-case running time grows linearly with the input size.
 > 1. **Use Case:** Big O is often used to analyze the worst-case scenario.
 
-## Big O Basic Concepts
+## 2. Big O Basic Concepts
 
-Certainly! Let's review and enhance the content on Big O notation, along with pseudocode examples for each complexity:
+### 2.1. O(1): Constant Time
 
-### **Big O Basic Concepts**
+> 1. **Description:** Algorithms with constant time complexity execute in a fixed amount of time, regardless of the input size. They are highly efficient.
+> 1. **Example:** Accessing an array element by its index.
 
-1. **O(1): Constant Time**
-   - **Description:** Algorithms with constant time complexity execute in a fixed amount of time, regardless of the input size. They are highly efficient.
-   - **Example:** Accessing an array element by its index.
-   - **Pseudocode:**
-     ```python
-     def access_element(arr, index):
-         return arr[index]
-     ```
+**Sample codes:**
 
-2. **O(log n): Logarithmic Time**
-   - **Description:** Logarithmic time complexity indicates that the algorithm divides the problem into smaller parts in each step (divide and conquer). It's efficient for large datasets.
-   - **Example:** Binary search.
-   - **Pseudocode:**
-     ```python
-     def binary_search(arr, target):
-         left, right = 0, len(arr) - 1
-         while left <= right:
-             mid = left + (right - left) // 2
-             if arr[mid] == target:
-                 return mid
-             elif arr[mid] < target:
-                 left = mid + 1
-             else:
-                 right = mid - 1
-         return -1
-     ```
+```python
+# Python
+def access_element(arr, index):
+    return arr[index]
+```
 
-3. **O(n): Linear Time**
-   - **Description:** Linear time complexity means the running time grows linearly with the input size. It's proportional to the data set size.
-   - **Example:** Looping through an array.
-   - **Pseudocode:**
-     ```python
-     def linear_search(arr, target):
-         for i in range(len(arr)):
-             if arr[i] == target:
-                 return i
-         return -1
-     ```
+```javascript
+// JavaScript
+function accessElement(arr, index) {
+    return arr[index];
+}
+```
 
-4. **O(n log n): Linearithmic Time**
-   - **Description:** Linearithmic time complexity combines linear and logarithmic behavior. It's common in sorting and searching algorithms.
-   - **Example:** Merge sort, quick sort.
-   - **Pseudocode (Merge Sort):**
-     ```python
-     def merge_sort(arr):
-         if len(arr) <= 1:
-             return arr
-         mid = len(arr) // 2
-         left_half = merge_sort(arr[:mid])
-         right_half = merge_sort(arr[mid:])
-         return merge(left_half, right_half)
+### 2.2. O(log n): Logarithmic Time
 
-     def merge(left, right):
-         result = []
-         i, j = 0, 0
-         while i < len(left) and j < len(right):
-             if left[i] < right[j]:
-                 result.append(left[i])
-                 i += 1
-             else:
-                 result.append(right[j])
-                 j += 1
-         result.extend(left[i:])
-         result.extend(right[j:])
-         return result
-     ```
+> 1. **Description:** Logarithmic time complexity indicates that the
+divides the problem into smaller parts in each step (divide and conquer). It's efficient for large datasets.
+> 1. **Example:** Binary search.
 
-5. **O(n^2): Polynomial Time**
-   - **Description:** Polynomial time complexity involves nested loops for each power of n. It's less efficient for large datasets.
-   - **Example:** Bubble sort (O(n^2)).
-   - **Pseudocode:**
-     ```python
-     def bubble_sort(arr):
-         n = len(arr)
-         for i in range(n):
-             for j in range(n - i - 1):
-                 if arr[j] > arr[j + 1]:
-                     arr[j], arr[j + 1] = arr[j + 1], arr[j]
-     ```
+**Sample codes:**
 
-Remember that understanding these complexities helps in choosing the right algorithm for specific tasks. Feel free to ask if you need further clarification or additional examples! 🌟📊
+```python
+# Python
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = left + (right - left) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+```
 
-Source: Conversation with Bing, 5/11/2024
-(1) github.com. https://github.com/jaydeepdeka/DataStructures-Algo/tree/c068472913656af615dbfd51823d2d0bce9b9ed5/sorting.py.
-(2) github.com. https://github.com/michaelmcguiness/stanford-algorithms-specialization/tree/ff3cf563f46b79ac96f2ee97410ae40aeaf33eb4/divide-and-conquer%2Fmerge_sort.py.
-(3) github.com. https://github.com/gcy1998/sample-code/tree/29539d4f45013bcaf84d1d9962fc506b3089d073/Python%2FAlgorithms%2Fsort_compare.py.
-(4) github.com. https://github.com/xiongdawei/Sorting-Algorithm/tree/95a92f85ca27acea38e869407bed153df564fd3c/work056.py.
-(5) github.com. https://github.com/juso40/sorting-algorithms/tree/0f7db0940c2fc013a107d158ba0ef285f1c4125d/Python%2FBubblesort.py.
+```javascript
+// JavaScript
+function binarySearch(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        if (arr[mid] === target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1;
+}
+```
+
+### 2.3. O(n): Linear Time
+
+> 1. **Description:** Linear time complexity means the running time grows linearly with the input size. It's proportional to the data set size.
+> 1. **Example:** Looping through an array.
+
+**Sample codes:**
+
+```python
+# Python
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+```
+
+```javascript
+// JavaScript
+function linearSearch(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+            return i;
+        }
+    }
+    return -1;
+}
+```
+
+### 2.4. O(n log n): Linearithmic Time
+
+> 1. **Description:** Linearithmic time complexity combines linear and logarithmic behavior. It's common in sorting and searching algorithms.
+> 1. **Example:** Merge sort, quick sort.
+
+**Sample codes:**
+
+```python
+# Python
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left_half = merge_sort(arr[:mid])
+    right_half = merge_sort(arr[mid:])
+    return merge(left_half, right_half)
+
+
+def merge(left, right):
+    result = []
+    i, j = 0, 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+```
+
+```javascript
+// JavaScript
+function mergeSort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+    const mid = Math.floor(arr.length / 2);
+    const leftHalf = mergeSort(arr.slice(0, mid));
+    const rightHalf = mergeSort(arr.slice(mid));
+
+    return merge(leftHalf, rightHalf);
+}
+
+function merge(left, right) {
+    const result = [];
+    let i = 0;
+    let j = 0;
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            result.push(left[i]);
+            i++;
+        } else {
+            result.push(right[j]);
+            j++;
+        }
+    }
+    
+    return result.concat(left.slice(i), right.slice(j));
+}
+```
+
+### 2.5. O(n^2): Polynomial Time
+
+> 1. **Description:** Polynomial time complexity involves nested loops for each power of n. It's less efficient for large datasets.
+> 1. **Example:** Bubble sort (O(n^2)).
+
+**Sample codes:**
+
+```python
+# Python
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+```
+
+```javascript
+// JavaScript
+function bubbleSort(arr) {
+    const n = arr.length;
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
+    }
+}
+```
 
 ---
 
