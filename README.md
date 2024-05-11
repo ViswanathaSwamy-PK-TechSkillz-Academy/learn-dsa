@@ -35,11 +35,13 @@ I am learning Data Structures and Algorithms from different Websites, Books, and
 **Sample codes:**
 
 ```python
+# Python
 def access_element(arr, index):
     return arr[index]
 ```
 
 ```javascript
+// JavaScript
 function accessElement(arr, index) {
     return arr[index];
 }
@@ -54,6 +56,7 @@ divides the problem into smaller parts in each step (divide and conquer). It's e
 **Sample codes:**
 
 ```python
+# Python
 def binary_search(arr, target):
     left, right = 0, len(arr) - 1
     while left <= right:
@@ -68,6 +71,7 @@ def binary_search(arr, target):
 ```
 
 ```javascript
+// JavaScript
 function binarySearch(arr, target) {
     let left = 0;
     let right = arr.length - 1;
@@ -93,6 +97,7 @@ function binarySearch(arr, target) {
 **Sample codes:**
 
 ```python
+# Python
 def linear_search(arr, target):
     for i in range(len(arr)):
         if arr[i] == target:
@@ -101,6 +106,7 @@ def linear_search(arr, target):
 ```
 
 ```javascript
+// JavaScript
 function linearSearch(arr, target) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] === target) {
@@ -113,33 +119,36 @@ function linearSearch(arr, target) {
 
 ### 2.4. O(n log n): Linearithmic Time
 
-- **Description:** Linearithmic time complexity combines linear and logarithmic behavior. It's common in sorting and searching algorithms.
-- **Example:** Merge sort, quick sort.
-- **Pseudocode (Merge Sort):**
+> 1. **Description:** Linearithmic time complexity combines linear and logarithmic behavior. It's common in sorting and searching algorithms.
+> 1. **Example:** Merge sort, quick sort.
 
-     ```python
-     def merge_sort(arr):
-         if len(arr) <= 1:
-             return arr
-         mid = len(arr) // 2
-         left_half = merge_sort(arr[:mid])
-         right_half = merge_sort(arr[mid:])
-         return merge(left_half, right_half)
+**Sample codes:**
 
-     def merge(left, right):
-         result = []
-         i, j = 0, 0
-         while i < len(left) and j < len(right):
-             if left[i] < right[j]:
-                 result.append(left[i])
-                 i += 1
-             else:
-                 result.append(right[j])
-                 j += 1
-         result.extend(left[i:])
-         result.extend(right[j:])
-         return result
-     ```
+```python
+# Python
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left_half = merge_sort(arr[:mid])
+    right_half = merge_sort(arr[mid:])
+    return merge(left_half, right_half)
+
+
+def merge(left, right):
+    result = []
+    i, j = 0, 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+```
 
 ### 2.5. O(n^2): Polynomial Time
 
