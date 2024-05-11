@@ -189,12 +189,27 @@ function merge(left, right) {
 **Sample codes:**
 
 ```python
+# Python
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
         for j in range(n - i - 1):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
+```
+
+```javascript
+// JavaScript
+function bubbleSort(arr) {
+    const n = arr.length;
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
+    }
+}
 ```
 
 ---
