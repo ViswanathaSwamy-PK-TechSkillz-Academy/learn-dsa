@@ -3,14 +3,16 @@ const studentNames = [
     "Julia", "Kevin", "Lily", "Mike", "Nina", "Oliver", "Pamela", "Quincy", "Rachel"
 ];
 
-function showNameAt(students, index) {
-    if (index >= 0 && index < students.length) {
-        console.log(`Student: ${students[index]} at index ${index}`);
-    } else {
-        console.log(`Error: Index ${index} is out of bounds.`);
+function showNames(students) {
+    for (let i = 0; i < students.length; i++) {
+        console.log(students[i].toUpperCase());
+    }
+
+    for (let i = 0; i < students.length; i++) {
+        console.log(students[i].toLowerCase());
     }
 }
 
-module.exports = { showNameAt };
+module.exports = { showNames };
 
-showNameAt(studentNames, 41);
+console.log(showNames(studentNames));
