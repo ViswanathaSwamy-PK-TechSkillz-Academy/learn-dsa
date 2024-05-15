@@ -1,4 +1,4 @@
-﻿int BinarySearch(int[] arr, int target)
+﻿static int BinarySearch(int[] arr, int target)
 {
     int left = 0;
     int right = arr.Length - 1;
