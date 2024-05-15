@@ -1,9 +1,7 @@
-﻿using System;
-
-string[] studentNames = {
+﻿string[] studentNames = [
     "Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace", "Hannah", "Isaac",
     "Julia", "Kevin", "Lily", "Mike", "Nina", "Oliver", "Pamela", "Quincy", "Rachel"
-};
+];
 
 ShowNameAt(studentNames, 17);
 
