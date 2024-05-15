@@ -1,8 +1,3 @@
-const studentNames = [
-    "Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace", "Hannah", "Isaac",
-    "Julia", "Kevin", "Lily", "Mike", "Nina", "Oliver", "Pamela", "Quincy", "Rachel"
-];
-
 function showNameAt(students, index) {
     if (index >= 0 && index < students.length) {
         console.log(`Student: ${students[index]} at index ${index}`);
@@ -12,5 +7,10 @@ function showNameAt(students, index) {
 }
 
 module.exports = { showNameAt };
+
+const studentNames = [
+    "Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace", "Hannah", "Isaac",
+    "Julia", "Kevin", "Lily", "Mike", "Nina", "Oliver", "Pamela", "Quincy", "Rachel"
+];
 
 showNameAt(studentNames, 41);
