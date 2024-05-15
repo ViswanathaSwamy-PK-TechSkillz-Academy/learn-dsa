@@ -26,4 +26,4 @@
 
 int[] testArray = { 3, 6, 9, 12, 15, 18, 21, 24 };
 
-Console.WriteLine("Binary Search: " + BinarySearch(testArray, 9));
+WriteLine("Binary Search: " + BinarySearch(testArray, 9));
