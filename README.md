@@ -2,6 +2,12 @@
 
 I am learning Data Structures and Algorithms from different Websites, Books, and Video courses
 
+## To do list
+
+> 1. Drop Constants
+> 1. Drop Non-Dominants
+> 1. Different Terms for Input
+
 ## 1. Algorithmic Complexity Notations
 
 ### 1.1. Big Omega (Ω)
