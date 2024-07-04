@@ -49,14 +49,14 @@ def access_element(arr, index):
 ```javascript
 // JavaScript
 function accessElement(arr, index) {
-    return arr[index];
+  return arr[index];
 }
 ```
 
 ### 2.2. O(log n): Logarithmic Time
 
 > 1. **Description:** Logarithmic time complexity indicates that the
-divides the problem into smaller parts in each step (divide and conquer). It's efficient for large datasets.
+>    divides the problem into smaller parts in each step (divide and conquer). It's efficient for large datasets.
 > 1. **Example:** Binary search.
 
 **Sample codes:**
@@ -79,19 +79,19 @@ def binary_search(arr, target):
 ```javascript
 // JavaScript
 function binarySearch(arr, target) {
-    let left = 0;
-    let right = arr.length - 1;
-    while (left <= right) {
-        const mid = Math.floor((left + right) / 2);
-        if (arr[mid] === target) {
-            return mid;
-        } else if (arr[mid] < target) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
+  let left = 0;
+  let right = arr.length - 1;
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    if (arr[mid] === target) {
+      return mid;
+    } else if (arr[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
     }
-    return -1;
+  }
+  return -1;
 }
 ```
 
@@ -114,12 +114,12 @@ def linear_search(arr, target):
 ```javascript
 // JavaScript
 function linearSearch(arr, target) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === target) {
-            return i;
-        }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i;
     }
-    return -1;
+  }
+  return -1;
 }
 ```
 
@@ -159,31 +159,31 @@ def merge(left, right):
 ```javascript
 // JavaScript
 function mergeSort(arr) {
-    if (arr.length <= 1) {
-        return arr;
-    }
-    const mid = Math.floor(arr.length / 2);
-    const leftHalf = mergeSort(arr.slice(0, mid));
-    const rightHalf = mergeSort(arr.slice(mid));
+  if (arr.length <= 1) {
+    return arr;
+  }
+  const mid = Math.floor(arr.length / 2);
+  const leftHalf = mergeSort(arr.slice(0, mid));
+  const rightHalf = mergeSort(arr.slice(mid));
 
-    return merge(leftHalf, rightHalf);
+  return merge(leftHalf, rightHalf);
 }
 
 function merge(left, right) {
-    const result = [];
-    let i = 0;
-    let j = 0;
-    while (i < left.length && j < right.length) {
-        if (left[i] < right[j]) {
-            result.push(left[i]);
-            i++;
-        } else {
-            result.push(right[j]);
-            j++;
-        }
+  const result = [];
+  let i = 0;
+  let j = 0;
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      result.push(left[i]);
+      i++;
+    } else {
+      result.push(right[j]);
+      j++;
     }
-    
-    return result.concat(left.slice(i), right.slice(j));
+  }
+
+  return result.concat(left.slice(i), right.slice(j));
 }
 ```
 
@@ -207,14 +207,14 @@ def bubble_sort(arr):
 ```javascript
 // JavaScript
 function bubbleSort(arr) {
-    const n = arr.length;
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-            }
-        }
+  const n = arr.length;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
     }
+  }
 }
 ```
 
@@ -225,3 +225,90 @@ function bubbleSort(arr) {
 ![Polindrome Two Pointer in JavaScript](documentation/images/polindrome_js.PNG)
 
 ---
+
+@ -1,82 +0,0 @@
+We need to complete all the Exercises
+
+Exercise 1
+Question: Write a pseudocode to find the sum of two numbers.
+
+Solution:
+
+Procedure SumOfTwoNumbers
+// Your Code Here
+End Procedure
+Exercise 2
+Question: Write a pseudocode to find the maximum of three numbers.
+
+Solution:
+
+Procedure MaximumOfThreeNumbers
+// Your Code here
+End Procedure
+Exercise 3
+Question: Write a pseudocode to check if a number is even or odd.
+
+Solution:
+
+Procedure CheckEvenOrOdd
+// Your Code Here
+End Procedure
+Exercise 4
+Question: Write a pseudocode to calculate the factorial of a number.
+
+Solution:
+
+Procedure Factorial
+// You Code Here
+End Procedure
+Exercise 5
+Question: Write a pseudocode to check if a number is prime.
+
+Solution:
+
+Procedure CheckPrime
+Input: num (a positive integer)
+Output: result (prime or not prime)
+
+    // Your code here
+
+End Procedure
+Exercise 6
+Question: Write a pseudocode to swap two numbers.
+
+Solution:
+
+Procedure SwapNumbers
+// Your code here
+End Procedure
+
+Exercise 7
+Question: Write a pseudocode to calculate the area of a rectangle.
+
+Solution:
+
+Procedure AreaOfRectangle
+// Your code here
+End Procedure
+Exercise 8
+Question: Write a pseudocode to find the Fibonacci series up to a given limit.
+
+Solution:
+
+Procedure FibonacciSeries
+Input: limit (upper limit for Fibonacci series)
+
+    // Your code here
+
+End Procedure
+Exercise 9
+Question: Write a pseudocode to calculate the square root of a number using Newton's method.
+
+Solution:
+
+Procedure SquareRoot
+Input: num (a positive number)
+
+    // Your code here
+
+End Procedure
