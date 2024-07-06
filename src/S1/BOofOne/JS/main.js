@@ -8,3 +8,4 @@ const studentNames = [
 ];
 
 showNameAt(studentNames, 17);
+showNameAt(studentNames, 41);

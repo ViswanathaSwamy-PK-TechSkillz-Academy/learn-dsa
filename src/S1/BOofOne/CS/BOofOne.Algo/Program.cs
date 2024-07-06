@@ -6,3 +6,4 @@ string[] studentNames = {
         };
 
 StudentHelper.ShowNameAt(studentNames, 17);
+StudentHelper.ShowNameAt(studentNames, 41);
