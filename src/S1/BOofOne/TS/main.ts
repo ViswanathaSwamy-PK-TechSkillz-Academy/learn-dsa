@@ -1,10 +1,6 @@
-function showNameAt(students: string[], index: number): void {
-    if (index >= 0 && index < students.length) {
-        console.log(`Student: ${students[index]} at index ${index}`);
-    } else {
-        console.log(`Error: Index ${index} is out of bounds.`);
-    }
-}
+// main.ts
+
+import { showNameAt } from './studentHelper';
 
 const studentNames2: string[] = [
     "Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace", "Hannah",
@@ -12,5 +8,5 @@ const studentNames2: string[] = [
     "Quincy", "Rachel"
 ];
 
-// Example usage:
-showNameAt(studentNames2, 41); // Error: Index 41 is out of bounds.
+showNameAt(studentNames2, 17);  // Student: Rachel at index 17
+showNameAt(studentNames2, 41);  // Error: Index 41 is out of bounds.
