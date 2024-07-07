@@ -8,11 +8,11 @@ static void PerformBinarySearch(int[] array, int target)
 
     if (result != -1)
     {
-        Console.WriteLine($"Binary Search: Found target {target} at index {result}");
+        WriteLine($"Binary Search: Found target {target} at index {result}");
     }
     else
     {
-        Console.WriteLine($"Binary Search: Target {target} not found in the array.");
+        WriteLine($"Binary Search: Target {target} not found in the array.");
     }
 }
 
