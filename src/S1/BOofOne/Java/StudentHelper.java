@@ -5,7 +5,7 @@ public class StudentHelper {
         if (index >= 0 && index < students.length) {
             System.out.printf("Student: %s at index %d%n", students[index], index);
         } else {
-            System.out.printf("Error: Index %d is out of bounds.%n", index);
+            System.out.printf("Error: Index %d is out of bounds of total %d.%n", index, students.length);
         }
     }
 }
