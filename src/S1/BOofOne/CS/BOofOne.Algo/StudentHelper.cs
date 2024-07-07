@@ -12,7 +12,7 @@ public static class StudentHelper
         }
         else
         {
-            WriteLine($"Error: Index {index} is out of bounds.");
+            WriteLine($"Error: Index {index} is out of bounds of total {students.Length}.");
         }
     }
 }
