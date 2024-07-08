@@ -1,29 +1,23 @@
-﻿static int BinarySearch(int[] arr, int target)
+﻿using BOofLogN.Algo;
+
+int[] testArray = [3, 6, 9, 12, 15, 18, 21, 24];
+
+static void PerformBinarySearch(int[] array, int target)
 {
-    int left = 0;
-    int right = arr.Length - 1;
+    int result = BinarySearchHelper.BinarySearch(array, target);
 
-    while (left <= right)
+    if (result != -1)
     {
-        int mid = (left + right) / 2;
-
-        if (arr[mid] == target)
-        {
-            return mid;
-        }
-        else if (arr[mid] < target)
-        {
-            left = mid + 1;
-        }
-        else
-        {
-            right = mid - 1;
-        }
+        WriteLine($"Binary Search: Found target {target} at index {result}");
     }
-
-    return -1;
+    else
+    {
+        WriteLine($"Binary Search: Target {target} not found in the array.");
+    }
 }
 
-int[] testArray = { 3, 6, 9, 12, 15, 18, 21, 24 };
+// Test with target = 9
+PerformBinarySearch(testArray, 9);
 
-WriteLine("Binary Search: " + BinarySearch(testArray, 9));
+// Test with target = 99
+PerformBinarySearch(testArray, 99);
