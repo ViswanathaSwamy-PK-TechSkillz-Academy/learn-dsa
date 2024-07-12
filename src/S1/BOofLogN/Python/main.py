@@ -1,25 +1,19 @@
-def binary_search(arr, target):
-    left, right = 0, len(arr) - 1
+from binary_search_helper import binary_search
 
-    while left <= right:
-        mid = (left + right) // 2
-
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
-
-    return -1
-
-
-# Example usage:
 test_array = [3, 6, 9, 12, 15, 18, 21, 24]
-target_value = 9
 
-result = binary_search(test_array, target_value)
-if result != -1:
-    print(f"Element {target_value} found at index {result}")
-else:
-    print(f"Element {target_value} not found")
+
+def perform_binary_search(array, target):
+    result = binary_search(array, target)
+
+    if result != -1:
+        print(f"Binary Search: Found target {target} at index {result}")
+    else:
+        print(f"Binary Search: Target {target} not found in the array.")
+
+
+# Test with target = 9
+perform_binary_search(test_array, 9)
+
+# Test with target = 99
+perform_binary_search(test_array, 99)
